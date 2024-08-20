@@ -33,6 +33,7 @@ const TransactionScreen = ({ navigation }: any) => {
       <SerdaoInput
         key={'amount-input'}
         floatingLabel={'Amount'}
+        keyboardType={'numeric'}
         placeholder={Utils.generateExample('50000')}
         maxLength={34}
         autoCapitalize={'characters'}

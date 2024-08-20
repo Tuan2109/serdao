@@ -74,7 +74,6 @@ export const useViewModel = ({ navigation }: any) => {
       setChecksum(ChecksumEnum.invalid);
       return;
     }
-
     await SerdaoApi.addIBAN({
       ibanInfo: {
         iban: ibanInformationRef.current.iban.value,
@@ -83,9 +82,9 @@ export const useViewModel = ({ navigation }: any) => {
       },
       onSuccess: (data: IBANInformationInterface) => {
         addIBAN({
-          iban: ibanInformationRef.current.iban.value,
-          firstName: ibanInformationRef.current.firstName.value,
-          lastName: ibanInformationRef.current.lastName.value,
+          iban: data.iban,
+          firstName: data.firstName,
+          lastName: data.lastName,
         });
         navigation.goBack();
       },
@@ -98,11 +97,13 @@ export const useViewModel = ({ navigation }: any) => {
       buttonType,
       checksum,
       ibanError,
+      ibanInformationRef: ibanInformationRef.current
     },
     handlers: {
       onChangeText,
       onValidate,
       onPress,
+      validateAll,
     },
   };
 };

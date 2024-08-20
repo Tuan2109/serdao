@@ -41,11 +41,11 @@ export const styles = StyleSheet.create({
   icon: {
     width: 12,
     height: 12,
-    tintColor: Colors.text_floating_label
+    tintColor: Colors.text_floating_label,
   },
   empty: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 });

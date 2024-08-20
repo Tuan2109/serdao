@@ -14,17 +14,12 @@ export const addIBAN = async (
 ): Promise<void> => {
   const {onFailure, onSuccess} = params;
   try {
-    console.log('thth vao day 1');
     const response = await mockBE.processAddNewIBAN(params);
     if (response) {
-      console.log('thth vao day 2');
       onSuccess?.(params.ibanInfo);
       return;
     }
-
-    console.log('thth vao day 3');
   } catch (err) {
-    console.log('thth vao day 4', err);
     onFailure?.({errorCode: 40000, errorMessage: 'Timeout'});
     return;
   }
